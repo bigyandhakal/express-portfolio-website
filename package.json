@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "name": "express-website",
+  "description": "express website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigyandhakal/express-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigyandhakal/express-website/issues"
+  },
+  "homepage": "https://github.com/bigyandhakal/express-website#readme"
+}
