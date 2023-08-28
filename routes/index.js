@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const mailService = require('../services/mailer')
 // router.get('/:name', (req, res)=>{
 //     const { name } = req.params;
 //     name ? name : '';
@@ -7,25 +7,33 @@ const router = require('express').Router();
 // })
 
 router.get('/', (req, res)=>{
-    res.render("index")
+    res.render("index", {title:"Bigyan Portfolio"})
 })
 
 router.get('/privacy', (req, res)=>{
-    res.render("privacy")
+    res.render("privacy", {title:"Bigyan Portfolio"})
 })
 
 router.get('/project', (req, res)=>{
-    res.render("project")
+    res.render("project", {title:"Bigyan Portfolio"})
 })
 
 router.get('/terms', (req, res)=>{
-    res.render("terms")
+    res.render("terms", {title:"Bigyan Portfolio"})
 })
 
 router.get('/contact', (req, res)=>{
-    res.render("contact")
+    res.render("contact", {title:"Bigyan Portfolio"})
 })
 
+router.post('/contact', async (req, res)=>{
+    const data = req.body;
+    const response = await mailService.mailer({to:'bigyandhakal377@gmail.com', data});
+    let message;
+    if (response) message="Message received";
+    else message="Something went wrong";
+    res.json({data : message})
+})
 
 // router.get('/:name', (req, res)=>{
 //     console.log(req.query)
