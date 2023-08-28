@@ -5,6 +5,7 @@ const router = require('express').Router();
 //     name ? name : '';
 //     res.render("index", {name})
 // })
+
 router.get('/', (req, res)=>{
     res.render("index")
 })
